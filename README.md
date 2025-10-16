@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sivasankari Sureshrajadurai - MBA Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .profile-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            flex-shrink: 0;
+        }
+        
+        .header-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+        
+        .header-content p {
+            font-size: 1.1em;
+            opacity: 0.95;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info {
+            font-size: 0.95em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px;
+        }
+        
+        .section {
+            margin-bottom: 35px;
+        }
+        
+        .section-title {
+            font-size: 1.8em;
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .icon-badge {
+            width: 30px;
+            height: 30px;
+            background: #667eea;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2em;
+        }
+        
+        .about-text {
+            font-size: 1.05em;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .info-item {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 15px;
+            border-left: 5px solid #667eea;
+            border-radius: 5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .info-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.15);
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #667eea;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        
+        .info-value {
+            font-size: 1em;
+            color: #333;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        tr:hover {
+            background: #f8f9fa;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .skill-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            text-align: center;
+            font-weight: 500;
+            box-shadow: 0 2px 10px rgba(102, 126, 234, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .skill-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .decorative-icons {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 30px 0;
+            opacity: 0.8;
+            padding: 20px 0;
+            border-top: 2px solid #f0f0f0;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.8em;
+            box-shadow: 0 2px 10px rgba(102, 126, 234, 0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .icon-circle:hover {
+            transform: scale(1.1);
+        }
+        
+        .footer {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px 40px;
+            text-align: center;
+            border-top: 2px solid #667eea;
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .header-content h1 {
+                font-size: 2em;
+            }
+            
+            .info-grid, .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                flex-direction: column;
+            }
+            
+            .decorative-icons {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section with Profile -->
+        <div class="header">
+            <svg class="profile-image" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="faceGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#fdbcb4;stop-opacity:1" />
+                        <stop offset="100%" style="stop-color:#f5a89f;stop-opacity:1" />
+                    </linearGradient>
+                </defs>
+                <!-- Face -->
+                <circle cx="100" cy="100" r="85" fill="url(#faceGradient)" />
+                <!-- Hair -->
+                <ellipse cx="100" cy="60" rx="80" ry="50" fill="#2c1810" />
+                <!-- Eyes -->
+                <circle cx="80" cy="90" r="8" fill="#3d2817" />
+                <circle cx="120" cy="90" r="8" fill="#3d2817" />
+                <circle cx="82" cy="88" r="3" fill="white" />
+                <circle cx="122" cy="88" r="3" fill="white" />
+                <!-- Eyebrows -->
+                <path d="M 70 75 Q 80 70 90 73" stroke="#2c1810" stroke-width="3" fill="none" stroke-linecap="round" />
+                <path d="M 110 73 Q 120 70 130 75" stroke="#2c1810" stroke-width="3" fill="none" stroke-linecap="round" />
+                <!-- Nose -->
+                <line x1="100" y1="90" x2="100" y2="115" stroke="#d4908a" stroke-width="2" />
+                <!-- Lips -->
+                <path d="M 85 135 Q 100 145 115 135" stroke="#c75d5d" stroke-width="2.5" fill="none" stroke-linecap="round" />
+                <!-- Professional Attire -->
+                <rect x="50" y="140" width="100" height="60" fill="#e8ddd5" />
+                <path d="M 50 140 L 65 165 L 135 165 L 150 140" fill="#d4b5a0" />
+            </svg>
+            
+            <div class="header-content">
+                <h1>Sivasankari Sureshrajadurai</h1>
+                <p>MBA Student | Technology & Business Strategy</p>
+                <p>ID: 2401596</p>
+                <div class="contact-info">
+                    📧 Email: sivasankari@university.edu | 📱 +1 (XXX) XXX-XXXX
+                </div>
+            </div>
+        </div>
+
+        <!-- Decorative Professional Icons Section -->
+        <div class="decorative-icons">
+            <div class="icon-circle" title="Leadership">👔</div>
+            <div class="icon-circle" title="Strategy">🎯</div>
+            <div class="icon-circle" title="Technology">💻</div>
+            <div class="icon-circle" title="Innovation">💡</div>
+            <div class="icon-circle" title="Growth">📈</div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="content">
+            <!-- About Section -->
+            <div class="section">
+                <h2 class="section-title">About Me</h2>
+                <p class="about-text">
+                    I am an MBA student with a strong foundation in information technology and a passion for bridging the gap between technology innovation and business strategy. My career journey reflects a commitment to continuous learning, professional excellence, and collaborative problem-solving. With experience in IT infrastructure and current engagement in professional services, I bring a unique perspective on how organizations can leverage technology to achieve strategic objectives.
+                </p>
+            </div>
+
+            <!-- Education Section -->
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Degree</th>
+                            <th>Field of Study</th>
+                            <th>Institution</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Master of Business Administration</td>
+                            <td>Business Administration</td>
+                            <td>University</td>
+                            <td>In Progress</td>
+                        </tr>
+                        <tr>
+                            <td>Bachelor of Science</td>
+                            <td>Computer Science</td>
+                            <td>University</td>
+                            <td>Completed</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Professional Experience Section -->
+            <div class="section">
+                <h2 class="section-title">Professional Experience</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Position</th>
+                            <th>Industry</th>
+                            <th>Duration</th>
+                            <th>Key Responsibilities</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Professional Services Associate</td>
+                            <td>Business Services</td>
+                            <td>Current (Part-time)</td>
+                            <td>Client liaison, project coordination, service delivery</td>
+                        </tr>
+                        <tr>
+                            <td>IT Professional</td>
+                            <td>Information Technology</td>
+                            <td>Previous</td>
+                            <td>System administration, infrastructure management, technical support</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Core Competencies Section -->
+            <div class="section">
+                <h2 class="section-title">Core Competencies</h2>
+                <div class="skills-container">
+                    <div class="skill-badge">Strategic Planning</div>
+                    <div class="skill-badge">Project Management</div>
+                    <div class="skill-badge">Business Analysis</div>
+                    <div class="skill-badge">Technology Integration</div>
+                    <div class="skill-badge">Team Leadership</div>
+                    <div class="skill-badge">Process Optimization</div>
+                    <div class="skill-badge">Data Analytics</div>
+                    <div class="skill-badge">Client Relations</div>
+                    <div class="skill-badge">Problem-Solving</div>
+                </div>
+            </div>
+
+            <!-- Key Strengths Section -->
+            <div class="section">
+                <h2 class="section-title">Key Strengths</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">Collaborative Approach</div>
+                        <div class="info-value">I value teamwork and believe that respectful dialogue and calm discussion drive effective solutions to complex business challenges.</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Professional Responsibility</div>
+                        <div class="info-value">Demonstrated commitment to managing professional tasks with diligence, attention to detail, and accountability across diverse organizational environments.</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Technical Acumen</div>
+                        <div class="info-value">Strong foundation in computer science with practical IT experience, enabling effective communication between technical and business teams.</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Continuous Learner</div>
+                        <div class="info-value">Passionate about exploring new learning opportunities and staying current with industry trends in technology and business management.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Areas of Interest Section -->
+            <div class="section">
+                <h2 class="section-title">Areas of Interest</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Interest Area</th>
+                            <th>Focus</th>
+                            <th>Application</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Digital Transformation</td>
+                            <td>Technology-driven business change</td>
+                            <td>Enterprise strategy and implementation</td>
+                        </tr>
+                        <tr>
+                            <td>Business Intelligence</td>
+                            <td>Data-driven decision making</td>
+                            <td>Analytics and performance optimization</td>
+                        </tr>
+                        <tr>
+                            <td>Organizational Management</td>
+                            <td>Team dynamics and leadership</td>
+                            <td>Building high-performing teams</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Sivasankari Sureshrajadurai | MBA Portfolio 2024 | Committed to Excellence in Technology and Business Strategy</p>
+        </div>
+    </div>
+</body>
+</html>
